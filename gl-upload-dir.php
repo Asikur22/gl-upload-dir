@@ -13,6 +13,14 @@
 
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
+function gl_ud_increase_upload_size() {
+	$media_upload_size = 7850 * 10000;
+	
+	return $media_upload_size;
+}
+
+add_filter( 'upload_size_limit', 'gl_ud_increase_upload_size' );
+
 /*
  * Change upload directory for PDF and ZIP files 
  * Only works in WordPress 3.3+
